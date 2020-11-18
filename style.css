@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	z-index:1;
+}
+.logo{
+	padding: 1rem;
+}
+nav{
+	width: 90%;
+	min-height: 10vh;
+	display: flex;
+	margin: auto;
+	justify-content: space-between;
+	align-items: center;
+
+}
+nav ul{
+	display: flex;
+	list-style: none;
+}
+nav ul li{
+	padding:0rem 2rem;
+	font-size: 1.3rem;
+}
+nav li a{
+	text-decoration: none;
+}
+a{
+	color:black;
+}
+nav li a:hover:not(.active) {
+  color: #F07C41;
+
+}
+
+nav li.active a {
+  border-bottom: 2px solid #55BDCA;
+  color: #F07C41;
+}
+.landing{
+	min-height: 60vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 75%;
+	margin:auto;
+}
+.landing h2{
+	font-size: 4rem;
+	color:#F07C41;
+	font-weight: bold;
+}
+.landing h3{
+	font-size: 3rem;
+	font-weight: lighter;
+	padding: 2rem 0rem;
+}
+.wave{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left:0;
+	z-index:0;
+	
+}
+.myButton {
+	background-color:#55BDCA;
+	border: none;
+	border-radius:40px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size:25px;
+	padding:23px 38px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#55BDCA;
+	color:#022249;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
