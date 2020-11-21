@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
 	z-index:1;
+	background-color: #D4E0E1;
 }
 .logo{
 	padding: 1rem;
