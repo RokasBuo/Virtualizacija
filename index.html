@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Skambučių centras</title>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
+
 	<nav>
 		<img class="logo" src="logo.svg" alt="">
 		<ul>
@@ -19,19 +22,40 @@
 			<li><a href="kontaktai.html">Kontaktai</a></li>
 		</ul>
 	</nav>
+	<div id="body-overlay" class="body-blackout"></div>
 	<section class="landing">
 		<div class="text-intro">
 			<h2>Skambutis</h2>
 			<h3>Norėdami sužinoti daugiau spauskite žemiau</h3>
-			<button href="#" class="myButton">Skambinti</button>
-			</div>
+			<button href="#" id="formBtn" class="myButton">Skambinti</button>
+		</div>
 		<div class="img-intr">
 			<img src="circle.svg" alt="">
 		</div>
 	</section>
 
-		<img class="wave" src="bg.svg">
-	
+	<img class="wave" src="bg.svg">
 
+	<div class="popup-modal" id="popup" data-popup-modal="one">
+		<i class="close-icon popup-modal__close noselect">X</i>
+		<h1 class="modal-title">
+			Registracija skambučiui
+		</h1>
+		<form id="reg-form">
+			<label for="name">Vardas</label>
+			<input class="form-input" type="text" name="name" required>
+			<label for="number">Numeris arba vartotojo vardas</label>
+			<input class="form-input" type="text" name="number" required>
+			<label for="type">Susisiekimo tipas</label>
+			<select class="form-input form-select" name="type">
+				<option value="skype">Skype</option>
+				<option value="phone">Telefonu</option>
+				<option value="discord">Discord</option>
+			</select>
+			<button type="submit" class="reg-btn form-input">Registruotis</button>
+		</form>
+	</div>
 </body>
+<script src="main.js"></script>
+
 </html>
