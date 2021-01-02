@@ -1,5 +1,6 @@
 /* jshint esversion: 9 */
 const express = require('express');
+var bodyParser = require('body-parser');
 const { Client } = require('pg');
 const path = require('path');
 const user = require("os").userInfo().username;
@@ -12,9 +13,13 @@ const client = new Client({
 });
 const app = express();
 const port = 3000;
-client.connect();
 
+
+// server static files from public/
 app.use(express.static('public'));
+
+// parse application/json
+app.use(bodyParser.json());
 
 
 const serveFile = (name, res) => {
@@ -42,10 +47,12 @@ app.listen(port, () => {
 });
 
 app.post('/register', (req, res) => {
+    client.connect();
     console.log(req.body);
     client.query('SELECT NOW()', (err, res) => {
         console.log(err, res);
         client.end();
     });
+    return res.json("ok").status(200);
 });
 

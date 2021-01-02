@@ -23,7 +23,6 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     //convert form inputs to object
     var data = Object.fromEntries(new FormData(e.target).entries());
-    console.log(data);
 
     fetch('/register', {
         method: 'POST', // or 'PUT'
