@@ -1,0 +1,8 @@
+GITHUB_ACCESS_TOKEN: 9825f0642e34684e1cc9d3d20f6054ecc00ca3fc
+KEY_TITLE: git_ssh_key
+KEY_PATH: ~/.ssh/id_rsa_git
+GIT_REPO: git@github.com:RokasBuo/Virtualizacija.git
+GIT_BRANCH: main
+CLONE_DEST: /var/www/website
+KNOWN_HOSTS_PATH: ~/.ssh/known_hosts
+GIT_EXECUTABLE: /usr/bin/git
