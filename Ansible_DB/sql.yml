@@ -1,0 +1,46 @@
+- hosts: vm
+  tasks:
+  - name: "Ensure Postgresql is installed"
+    become: true
+    become_user: root
+    apt:
+        pkg=postgresql
+        state=present
+        update_cache=true
+
+  - name: "Start Postgresql"
+    service:
+        name: postgresql
+        state: started
+
+  - name: "Register Ansible directory"
+    stat:
+      path: /tmp/CallCenterSetup
+    register: ans_dir
+
+  - name: "Create Ansible directory"
+    file:
+      path: /tmp/CallCenterSetup
+      state: directory
+      mode: 0777
+    when: ans_dir.stat.exists == false
+
+  - name: "Send DB setup file"
+    copy:
+      src: ~/Ansible/DB_Setup.sql
+      dest: /tmp/CallCenterSetup/
+
+  - name: "Send Postgresql setup file"
+    copy:
+      src: ~/Ansible/Postgresql_Setup.sh
+      dest: /tmp/CallCenterSetup/
+
+  - name: "Make Postgresql setup executable"
+    file:
+     path: /tmp/CallCenterSetup/Postgresql_Setup.sh
+     mode: a+x
+
+  - name: "Run Postgresql setup"
+    become: true
+    become_user: root
+    command: /tmp/CallCenterSetup/Postgresql_Setup.sh
