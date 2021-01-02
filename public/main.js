@@ -25,7 +25,7 @@ form.addEventListener('submit', function (e) {
     var data = Object.fromEntries(new FormData(e.target).entries());
     console.log(data);
 
-    fetch('/some-url', {
+    fetch('/register', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

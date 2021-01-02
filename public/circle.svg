@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342.36" height="343.9" viewBox="0 0 452 454.155">
+  <g id="Group_9" data-name="Group 9" transform="translate(-1222 -302)">
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="226" cy="226" r="226" transform="translate(1222 302)" fill="#022249"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="44" cy="44" r="44" transform="translate(1512 369)" fill="#f07c41"/>
+    <line id="Line_1" data-name="Line 1" x1="44.308" y2="45.416" transform="translate(1436.339 393.385)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <line id="Line_4" data-name="Line 4" x1="44.308" y2="45.416" transform="translate(1490.616 520.77)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <line id="Line_5" data-name="Line 5" x1="6.646" y2="6.646" transform="translate(1487.293 476.462)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <line id="Line_6" data-name="Line 6" x1="6.646" y2="6.646" transform="translate(1490.616 508.585)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <line id="Line_7" data-name="Line 7" x1="6.646" y2="6.646" transform="translate(1493.939 330.246)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <line id="Line_8" data-name="Line 8" x1="6.646" y2="6.646" transform="translate(1497.262 362.369)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <line id="Line_9" data-name="Line 9" x1="6.646" y2="6.646" transform="translate(1595.847 505.262)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <line id="Line_10" data-name="Line 10" x1="6.646" y2="6.646" transform="translate(1599.17 537.385)" fill="none" stroke="rgba(255,255,255,0.63)" stroke-width="3"/>
+    <path id="Intersection_1" data-name="Intersection 1" d="M0,22.116Q0,10.919,1.069,0C180.576,99.64,157.579,179.237,207.022,187.212c49.538,7.99,168.59,0,168.59,0L374.3,192.59A225.108,225.108,0,0,1,225.97,248.085C101.17,248.085,0,146.915,0,22.116Z" transform="translate(1222 508.07)" fill="#55bdca"/>
+  </g>
+</svg>

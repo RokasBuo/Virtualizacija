@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  z-index: 1;
+}
+
+body {
+  background-color: #d4e0e1;
+}
+.body-blackout {
+  position: absolute;
+  z-index: 1010;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: none;
+}
+.body-blackout.is-blacked-out {
+  display: block;
+}
+
+.close-icon {
+  background-color: #55bdca;
+  padding: 1rem;
+}
+
+.popup-modal {
+  min-height: 365px;
+  width: 650px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 45px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  z-index: 1011;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.modal-title {
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.reg-btn {
+  background: #55bdca;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: large;
+  cursor: pointer;
+}
+
+.popup-modal.is--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup-modal__close {
+  position: absolute;
+  font-size: 1.2rem;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+}
+
+.logo {
+  padding: 1rem;
+}
+nav {
+  width: 90%;
+  min-height: 10vh;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  padding: 0rem 2rem;
+  font-size: 1.3rem;
+}
+nav li a {
+  text-decoration: none;
+}
+a {
+  color: black;
+}
+nav li a:hover:not(.active) {
+  color: #f07c41;
+}
+nav li.active a {
+  border-bottom: 2px solid #55bdca;
+  color: #f07c41;
+}
+.landing {
+  min-height: 60vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+}
+.landing h2 {
+  font-size: 4rem;
+  color: #f07c41;
+  font-weight: bold;
+}
+.landing h3 {
+  font-size: 3rem;
+  font-weight: lighter;
+  padding: 2rem 0rem;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 0;
+}
+.myButton {
+  background-color: #55bdca;
+  border: none;
+  border-radius: 40px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 25px;
+  padding: 23px 38px;
+  text-decoration: none;
+}
+.myButton:hover {
+  background-color: #55bdca;
+  color: #022249;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
