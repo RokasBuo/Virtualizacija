@@ -9,9 +9,9 @@
         update_cache=true
 
   - name: "Start Postgresql"
-    service:
-        name: postgresql
-        state: started
+    become: true
+    become_user: root
+    shell: systemctl start postgresql
 
   - name: "Register Ansible directory"
     stat:
@@ -27,12 +27,12 @@
 
   - name: "Send DB setup file"
     copy:
-      src: ~/Ansible/DB_Setup.sql
+      src: ~/Playbooks/DB/DB_Setup.sql
       dest: /tmp/CallCenterSetup/
 
   - name: "Send Postgresql setup file"
     copy:
-      src: ~/Ansible/Postgresql_Setup.sh
+      src: ~/Playbooks/DB/Postgresql_Setup.sh
       dest: /tmp/CallCenterSetup/
 
   - name: "Make Postgresql setup executable"
@@ -46,15 +46,21 @@
     command: /tmp/CallCenterSetup/Postgresql_Setup.sh
 
   - name: "Allow all connections to Postgresql (postgresql.conf)"
-    shell: sed "s/^ *# *listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/postgresql/11/main/postgresql.conf
+    become: true
+    become_user: root
+    shell: sed -i "s/^ *#*listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/postgresql/11/main/postgresql.conf
 
-  - name: "Allow all connections to Postgresql (pg_hba.conf)"
+  - name: "Allow all connections to Postgresql (pg_hba.conf) (1/2)"
+    become: true
+    become_user: root
     shell: echo "host    all             all             0.0.0.0/0               md5" >> /etc/postgresql/11/main/pg_hba.conf
+
+  - name: "Allow all connections to Postgresql (pg_hba.conf) (2/2)"
+    become: true
+    become_user: root
     shell: echo "host    all             all             ::/0                    md5" >> /etc/postgresql/11/main/pg_hba.conf
 
   - name: "Restart Postgresql server"
     become: true
     become_user: root
-    service:
-      name: postgresql
-      state: restarted
+    shell: systemctl restart postgresql

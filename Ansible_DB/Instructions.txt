@@ -1,1 +1,0 @@
-The "Ansible" directory with its contents has to be located in the current user's home 
