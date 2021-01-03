@@ -21,7 +21,7 @@ try {
 }
 
 // server static files from public/
-app.use(express.static('public'));
+app.use('/public', express.static('public'));
 
 // parse application/json
 app.use(bodyParser.json());
