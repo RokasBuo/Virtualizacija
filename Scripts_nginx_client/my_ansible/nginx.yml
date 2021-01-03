@@ -82,17 +82,17 @@
         state: present
     
     - name: Install website dependencies
-      shell: cd {{ CLONE_DIST }} && npm install
+      shell: cd {{ CLONE_DEST }} && npm install
 
 
     #----------------------------------------------------
     # Install PM2 and run website on it
 
     - name: Install PM2
-    shell: npm install pm2 -g
+      shell: npm install pm2 -g
 
     - name: Run website
-    shell: cd {{ CLONE_DIST}} && pm2 start index.js
+      shell: cd {{ CLONE_DEST}} && pm2 start index.js
 
     #----------------------------------------------------
     # Install and cofigure Nginx
