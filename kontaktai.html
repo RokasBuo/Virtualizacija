@@ -28,6 +28,18 @@
 	</section>
 
 	<div class="infobox">
+		<div class="txtbox">
+			<h2>Kontaktai</h2>
+		</div>
+		<form id="contact-form">
+			<label for="name">Vardas</label>
+			<input class="form-input" type="text" name="name" required>
+			<label for="name">El. Paštas</label>
+			<input class="form-input" type="email" name="email" required>
+			<label for="name">Žinutė</label>
+			<input class="form-input" type="text" name="name" required>
+			<button type="submit" class="reg-btn form-input">Registruotis</button>
+		</form>
 
 	</div>
 
@@ -35,5 +47,12 @@
 
 
 </body>
+<script>
+	var contact_form = document.getElementById("contact-form");
+	contact_form.addEventListener('submit', function (e) {
+		console.log('submitted');
+		e.preventDefault();
+	});
+</script>
 
 </html>

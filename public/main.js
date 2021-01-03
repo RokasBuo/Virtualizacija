@@ -2,7 +2,8 @@ var popup = document.getElementById("popup");
 var overlay = document.getElementById("body-overlay");
 var close = document.getElementsByClassName("close-icon")[0];
 var submit = document.getElementsByClassName("reg-btn")[0];
-var form = document.getElementById("reg-form");
+var reg_form = document.getElementById("reg-form");
+
 
 document.getElementById("formBtn").addEventListener('click', showPopup);
 
@@ -19,7 +20,7 @@ function hidePopup() {
     overlay.classList.remove('is-blacked-out');
 }
 
-form.addEventListener('submit', function (e) {
+reg_form.addEventListener('submit', function (e) {
     e.preventDefault();
     //convert form inputs to object
     var data = Object.fromEntries(new FormData(e.target).entries());
@@ -41,3 +42,4 @@ form.addEventListener('submit', function (e) {
             console.error('Error:', error);
         });
 });
+
