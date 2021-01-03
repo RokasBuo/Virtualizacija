@@ -62,8 +62,6 @@
     - name: Clone the repository
       shell: GIT_SSH_COMMAND="ssh -i {{ KEY_PATH }} -v -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" {{ GIT_EXECUTABLE }} clone {{ GIT_REPO }} {{ CLONE_DEST }}
 
-    #----------------------------------------------------
-    # Install Node.JS, NPM and install website dependencies
 
     - name: Install the gpg key for nodejs LTS
       apt_key:
@@ -80,7 +78,7 @@
       apt:
         name: nodejs
         state: present
-    
+
     - name: Install website dependencies
       shell: cd {{ CLONE_DEST }} && npm install
 
@@ -92,7 +90,7 @@
       shell: npm install pm2 -g
 
     - name: Run website
-      shell: cd {{ CLONE_DEST}} && pm2 start index.js
+      shell: pm2 -f start {{ CLONE_DEST }}/index.js
 
     #----------------------------------------------------
     # Install and cofigure Nginx
