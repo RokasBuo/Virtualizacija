@@ -6,10 +6,10 @@ const path = require('path');
 
 const client = new Client({
     user: 'postgres',
-    host: 'localhost',
+    host: '', //HAS TO BE REMOTE MACHINE PRIVATE IP
     database: 'callcenter',
     password: 'test',
-    port: 5432, //default postgres port
+    port: 5432, //LEAVE AS default postgres port
 });
 
 const app = express();

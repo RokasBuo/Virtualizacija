@@ -44,3 +44,17 @@
     become: true
     become_user: root
     command: /tmp/CallCenterSetup/Postgresql_Setup.sh
+
+  - name: "Allow all connections to Postgresql (postgresql.conf)"
+    shell: sed "s/^ *# *listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/postgresql/11/main/postgresql.conf
+
+  - name: "Allow all connections to Postgresql (pg_hba.conf)"
+    shell: echo "host    all             all             0.0.0.0/0               md5" >> /etc/postgresql/11/main/pg_hba.conf
+    shell: echo "host    all             all             ::/0                    md5" >> /etc/postgresql/11/main/pg_hba.conf
+
+  - name: "Restart Postgresql server"
+    become: true
+    become_user: root
+    service:
+      name: postgresql
+      state: restarted
