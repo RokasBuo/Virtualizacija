@@ -18,7 +18,7 @@ const port = 3000;
 client.connect().then(() => console.log("connected")).catch(console.log);
 
 // server static files from public/
-app.use('/public', express.static('public'));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // parse application/json
 app.use(bodyParser.json());
