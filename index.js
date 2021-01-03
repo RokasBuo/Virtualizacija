@@ -3,14 +3,15 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const { Client } = require('pg');
 const path = require('path');
-const user = require("os").userInfo().username;
+
 const client = new Client({
-    user: user,
+    user: 'postgres',
     host: 'localhost',
     database: 'callcenter',
-    password: '', //no pass
+    password: 'test', //no pass
     port: 5432, //default postgres port
 });
+
 const app = express();
 const port = 3000;
 

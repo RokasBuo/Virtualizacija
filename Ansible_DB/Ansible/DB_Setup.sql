@@ -43,3 +43,5 @@ CREATE TABLE Product
 );
 
 INSERT INTO Product VALUES (1, 'Phonebook', 'A book with pictures of phones', 12.34);
+
+ALTER USER postgres PASSWORD 'test';
