@@ -92,7 +92,7 @@
     shell: npm install pm2 -g
 
     - name: Run website
-    shell: pm2 start {{ CLONE_DIST }}/index.js
+    shell: cd {{ CLONE_DIST}} && pm2 start index.js
 
     #----------------------------------------------------
     # Install and cofigure Nginx
