@@ -14,7 +14,12 @@ const client = new Client({
 const app = express();
 const port = 3000;
 
-client.connect();
+try {
+    client.connect();
+} catch(error) {
+    console.log(error);
+}
+
 // server static files from public/
 app.use(express.static('public'));
 
