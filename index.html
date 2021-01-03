@@ -59,6 +59,21 @@
 			<button type="submit" class="reg-btn form-input">Registruotis</button>
 		</form>
 	</div>
+
+	<div class="popup-modal" id="popup-success" data-popup-modal="two">
+		<i class="close-icon popup-modal__close noselect">X</i>
+		<h1 class="modal-title">
+			Jūsų registracija sekmingai užregistruota, susisieksime su jumis artimiausiu metu.
+		</h1>
+		<button type="submit" class="reg-btn form-input" onclick="hidePopup()">Gerai</button>
+	</div>
+	<div class="popup-modal" id="popup-error" data-popup-modal="three">
+		<i class="close-icon popup-modal__close noselect">X</i>
+		<h1 class="modal-title">
+			Nepavyko užregistruoti, bandykite dar kartą.
+		</h1>
+		<button type="submit" class="reg-btn form-input" onclick="hidePopup()">Gerai</button>
+	</div>
 </body>
 <script src="public/main.js"></script>
 

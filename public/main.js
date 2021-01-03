@@ -1,4 +1,6 @@
 var popup = document.getElementById("popup");
+var successPopup = document.getElementById("popup-success");
+var errorPopup = document.getElementById("popup-error");
 var overlay = document.getElementById("body-overlay");
 var close = document.getElementsByClassName("close-icon")[0];
 var submit = document.getElementsByClassName("reg-btn")[0];
@@ -15,9 +17,21 @@ function showPopup() {
     overlay.classList.add('is-blacked-out');
 }
 
+function showSuccessPopup() {
+    successPopup.classList.add("is--visible");
+    overlay.classList.add('is-blacked-out');
+}
+
+function showErrorPopup() {
+    errorPopup.classList.add("is--visible");
+    overlay.classList.add('is-blacked-out');
+}
+
 function hidePopup() {
     popup.classList.remove("is--visible");
     overlay.classList.remove('is-blacked-out');
+    successPopup.classList.remove("is--visible");
+    errorPopup.classList.remove("is--visible");
 }
 
 reg_form.addEventListener('submit', function (e) {
@@ -37,9 +51,11 @@ reg_form.addEventListener('submit', function (e) {
         })
         .then(function (data) {
             console.log('Success:', data);
+            showSuccessPopup();
         })
         .catch(function (error) {
             console.error('Error:', error);
+            showErrorPopup();
         });
 });
 

@@ -8,14 +8,14 @@ const client = new Client({
     user: 'postgres',
     host: 'localhost',
     database: 'callcenter',
-    password: 'test', //no pass
+    password: 'test',
     port: 5432, //default postgres port
 });
 
 const app = express();
 const port = 3000;
 
-client.connect().catch(console.error);
+client.connect().then(() => console.log("connected")).catch(console.log);
 
 // server static files from public/
 app.use('/public', express.static('public'));
