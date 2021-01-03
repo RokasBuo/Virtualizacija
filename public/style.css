@@ -164,3 +164,29 @@ nav li.active a {
   position: relative;
   top: 1px;
 }
+.infobox{
+  color:white;
+  width: 30%;
+  height: 50%;
+  background-color:#55bdca;
+  position: absolute;
+  left:53%;
+  top: 25%;
+  border:2px solid #55bdca;
+  border-radius: 20px;
+  padding: 15px;
+
+
+
+}
+.txtbox{
+  padding: 10px;
+  font-weight: normal;
+  text-align: center;
+  color:#022249;
+}
+.bigword{
+  font-size: 20px;
+  font-weight: bold;
+  margin:5px;
+}
